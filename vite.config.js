@@ -5,7 +5,11 @@ export default defineConfig({
     lib: {
       entry: 'src/webcomponent.js',
       name: 'TvStatic',
-      fileName: 'tv-static',
+      fileName: (format) => {
+        if (format === 'umd') return 'tv-static.umd.js'
+        if (format === 'es') return 'tv-static.esm.js'
+        return `tv-static.${format}.js`
+      },
       formats: ['es', 'umd']
     },
     rollupOptions: {
@@ -19,4 +23,4 @@ export default defineConfig({
     open: true
   },
   assetsInclude: ['**/*.glsl']
-}) 
+})
