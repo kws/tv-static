@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Static (WebGL - Lines Based)</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      height: 100%;
+    }
+    tv-static {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+<tv-static lines="120" auto-start></tv-static>
+
+<script type="module">
+  import './src/webcomponent.js';
+  
+  // Optional: Listen for events
+  const tvStatic = document.querySelector('tv-static');
+  
+  tvStatic.addEventListener('tv-static-ready', (event) => {
+    console.log('TV Static is ready!', event.detail);
+  });
+  
+  tvStatic.addEventListener('tv-static-error', (event) => {
+    console.error('TV Static error:', event.detail.error);
+  });
+</script>
+</body>
+</html>

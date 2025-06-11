@@ -1,0 +1,20 @@
+{
+  "name": "webgl-tv-static",
+  "version": "1.0.0",
+  "description": "A WebGL-powered Max Headroom style background web component",
+  "type": "module",
+  "main": "dist/tv-static.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview"
+  },
+  "keywords": ["webgl"],
+  "author": "Kaj Wik Siebert",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {}
+} 
