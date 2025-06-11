@@ -1,3 +1,7 @@
+// Import shaders as text
+import vertexShaderSource from './shaders/vertex.glsl?raw'
+import fragmentShaderSource from './shaders/fragment.glsl?raw'
+
 export class TVStatic {
   constructor(canvas) {
     this.canvas = canvas;
@@ -24,13 +28,8 @@ export class TVStatic {
 
   async loadShaders() {
     try {
-      const [vertexSource, fragmentSource] = await Promise.all([
-        fetch('./src/shaders/vertex.glsl').then(r => r.text()),
-        fetch('./src/shaders/fragment.glsl').then(r => r.text())
-      ]);
-
-      const vertexShader = this.createShader(this.gl.VERTEX_SHADER, vertexSource);
-      const fragmentShader = this.createShader(this.gl.FRAGMENT_SHADER, fragmentSource);
+      const vertexShader = this.createShader(this.gl.VERTEX_SHADER, vertexShaderSource);
+      const fragmentShader = this.createShader(this.gl.FRAGMENT_SHADER, fragmentShaderSource);
 
       this.program = this.gl.createProgram();
       this.gl.attachShader(this.program, vertexShader);
