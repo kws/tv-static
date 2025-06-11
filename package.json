@@ -1,6 +1,6 @@
 {
   "name": "webgl-tv-static",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A WebGL-based TV static effect packaged as a modern web component. Create realistic CRT-style static noise for your web projects.",
   "type": "module",
   "main": "dist/tv-static.js",
